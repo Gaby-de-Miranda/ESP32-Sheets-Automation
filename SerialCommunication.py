@@ -16,8 +16,8 @@ from time import sleep, ticks_ms
 i = 0 # Variável que será repassada
 rep = 0 # Repique do pushbutton
 
-indicador = Pin(5, Pin.OUT) # LED
-botao = Pin(4, Pin.IN, Pin.PULL_UP) # Pushbutton
+indicador = Pin(5, Pin.OUT) # LED conectado ao pino 5
+botao = Pin(4, Pin.IN, Pin.PULL_UP) # Pushbutton conectado ao pino 4
 
 # Função que registra o aperto do botão e muda o valor de i
 def apertoubotao(pino):
