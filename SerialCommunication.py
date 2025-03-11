@@ -1,5 +1,3 @@
-# MICROPYTHON CODE
-
 '''
   Código desenvolvido por Maria Gabriela de Miranda Porto
   
@@ -10,6 +8,7 @@
   para o computador, respectivamente
   
 '''
+# MICROPYTHON CODE
 
 from machine import UART, Pin
 from time import sleep, ticks_ms
