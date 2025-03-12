@@ -7,6 +7,6 @@ Google sheets, Excel/Libreoffice sheets, all included, with automations done usi
 All codes written in Micropython were done using Thonny IDE. Any code written in Wiring (C++) was done using Arduino IDE.
 
 
-The ESP32 model used for all programs is ESP32-WROOM-32 unless stated otherwise.
+The ESP32 model used for all projects is the ESP32-WROOM-32 model, unless stated otherwise.
 
-The operational system in which I wrote all the codes in was Linux Mint unless stated otherwise.
+The operational system in which I wrote all the codes in was Linux Mint, unless stated otherwise.
