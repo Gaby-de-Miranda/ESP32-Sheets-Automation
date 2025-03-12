@@ -16,24 +16,33 @@ from serial import Serial, SerialException
 from time import sleep
 
 porta = "/dev/ttyUSB0"  # Ajuste conforme necessário (ex: "COM3" no Windows)
+i = 0
 
-# Tentar conectar até que o ESP32 seja detectado
+# Loop principal, que assegura que o código não pare mesmo em caso de interrupções
 while True:
-    try:
-        ser = Serial(porta, 115200)
-        print("Conectado ao ESP32!")
-        break  # Sai do loop quando conectar
-      
-    except SerialException:
-        print("Aguardando ESP32...")
-        sleep(2)
+    # Loop para conexão
+    while (i == 0):
+        try:
+            ser = Serial(porta, 115200)
+            print("Conectado ao ESP32!")
 
-# Loop para leitura de dados
-while True:
-    try:
-        linha = ser.readline().decode('utf-8').strip() # UTF-8 corresponde ao modelo de teclado e os caracteres pertencentes à ele
-        print(f"Dado recebido: {linha}")
-      
-    except SerialException:
-        print("Erro na comunicação serial")
-        break  # Encerra o programa caso haja erro crítico
+            i = i + 1  # Passa para o loop de leitura de dados
+
+        except SerialException:
+            print("Aguardando ESP32...")
+            sleep(2)
+
+    # Loop para leitura de dados
+    while (i == 1):
+        try:
+            dado = ser.readline().decode('utf-8').strip()
+            print(f"Recebido: {dado}")
+
+        except SerialException:
+            print()
+            print("Erro na comunicação serial!")
+            print("Tentando reconectar...")
+            print()
+            sleep(1)
+
+            i = i - 1 # Volta para o loop de conexão
