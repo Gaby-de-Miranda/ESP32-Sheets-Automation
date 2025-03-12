@@ -18,7 +18,7 @@ from time import sleep
 porta = "/dev/ttyUSB0"  # Ajuste conforme necessário (ex: "COM3" no Windows)
 i = 0
 
-# Loop principal, que assegura que o código não pare mesmo em caso de interrupções
+# Loop principal, que assegura que o código não pare mesmo em caso de desconexão
 while True:
     # Loop para conexão
     while (i == 0):
@@ -35,8 +35,8 @@ while True:
     # Loop para leitura de dados
     while (i == 1):
         try:
-            dado = ser.readline().decode('utf-8').strip()
-            print(f"Recebido: {dado}")
+            linha = ser.readline().decode('utf-8').strip()
+            print(f"Recebido: {linha}")
 
         except SerialException:
             print()
@@ -44,5 +44,6 @@ while True:
             print("Tentando reconectar...")
             print()
             sleep(1)
+            ser.close()
 
             i = i - 1 # Volta para o loop de conexão
