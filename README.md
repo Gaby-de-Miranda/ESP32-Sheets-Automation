@@ -1,6 +1,9 @@
-# ESP32-projects
-This repository serves mostly as an archive of some interesting automation projects I've made using the microcontroller ESP32.
+# Automating Sheets using an ESP32
+This repository is an archive of some automation projects I've done for sheets. 
 
-All the codes written in Micropython were done on Thonny IDE. 
+Google sheets, Excel/Libreoffice sheets, all included, with automations done using different methods.
 
-For convenience purposes, the projects that are heavily reliant on visuals will have a commented link to their own simulation on wokwi.com
+All codes written in Micropython were done using Thonny IDE. Any code written in Wiring (C++) was done using Arduino IDE.
+
+The ESP32 model used for all programs is ESP32-WROOM-32 unless stated otherwise.
+The operational system in which I wrote all the codes in was Linux Mint unless stated otherwise.
