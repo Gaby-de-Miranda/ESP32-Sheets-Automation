@@ -10,6 +10,8 @@
 '''
 # MICROPYTHON CODE
 
+# Fazer circuito com botão como quebra galho pra simular a prensa!
+
 from machine import UART, Pin
 from machine import UART, Pin
 from time import sleep_ms as sleep
@@ -51,5 +53,4 @@ while True:
     if (j == 1):
         print(i)
         j = j - 1
-    sleep(500) # Delay de 500 milisegundos
     
